@@ -13,26 +13,24 @@
     <title>Mantenimiento de Ventas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <style>
-        body { background-color: #1e1e1e; color: white; }
-        .selected { background-color: #0d6efd !important; }
-        h3 { color: #ffffff; margin-top: 30px; }
-    </style>
 </head>
+
 <body class="bg-dark text-white">
 
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-black shadow">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">UMG</a>
+    <a class="navbar-brand fw-bold" href="#">CEJ</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link active" href="index.jsp"><i class="bi bi-house-door-fill"></i> Inicio</a></li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Menú</a>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            <i class="bi bi-grid"></i> Menú
+          </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="empleados.jsp">Empleados</a></li>
             <li><a class="dropdown-item" href="clientes.jsp">Clientes</a></li>
@@ -49,11 +47,13 @@
   </div>
 </nav>
 
+<!-- Contenido principal -->
 <div class="container mt-4">
-    <h1 class="text-center mb-4">Mantenimiento de Ventas</h1>
+    <h1 class="text-center mb-4 fw-bold text-light">Mantenimiento de Ventas</h1>
 
-   
-    <form action="sr_ventas" method="post" class="row g-3">
+    <form action="sr_ventas" method="post" class="row g-3 p-4 rounded bg-secondary bg-opacity-25 shadow-lg">
+
+        <!-- Campos principales -->
         <div class="col-md-2">
             <label for="txt_id" class="form-label">ID</label>
             <input type="text" class="form-control" id="txt_id" name="txt_id" value="0" readonly>
@@ -79,6 +79,7 @@
             <input type="datetime-local" class="form-control" id="txt_fecha_ingreso" name="txt_fecha_ingreso" required>
         </div>
 
+        <!-- Cliente -->
         <div class="col-md-6">
             <label for="drop_cliente" class="form-label">Cliente</label>
             <select class="form-select" id="drop_cliente" name="drop_cliente" required>
@@ -91,9 +92,12 @@
                     }
                 %>
             </select>
-            <a href="clientes.jsp" class="btn btn-link text-white">Ir a mantenimiento de Clientes</a>
+            <a href="clientes.jsp" class="btn btn-success btn-sm mt-2">
+                <i class="bi bi-person-lines-fill"></i> Mantenimiento Clientes
+            </a>
         </div>
 
+        <!-- Empleado -->
         <div class="col-md-6">
             <label for="drop_empleado" class="form-label">Empleado</label>
             <select class="form-select" id="drop_empleado" name="drop_empleado" required>
@@ -106,12 +110,14 @@
                     }
                 %>
             </select>
-            <a href="empleados.jsp" class="btn btn-link text-white">Ir a mantenimiento de Empleados</a>
+            <a href="empleados.jsp" class="btn btn-secondary btn-sm mt-2">
+                <i class="bi bi-person-badge-fill"></i> Mantenimiento Empleados
+            </a>
         </div>
 
-       
+        <!-- Detalle de Productos -->
         <div class="col-12 mt-4">
-            <h4><b>Detalle de Productos</b></h4>
+            <h4 class="fw-bold"><i class="bi bi-box-seam"></i> Detalle de Productos</h4>
             <table class="table table-dark table-striped" id="detalle_table">
                 <thead>
                     <tr>
@@ -124,134 +130,140 @@
                 </thead>
                 <tbody></tbody>
             </table>
-            <button type="button" class="btn btn-secondary" id="btn_agregar">+ Agregar Producto</button>
+            <button type="button" class="btn btn-outline-warning btn-sm" id="btn_agregar">
+                <i class="bi bi-plus-circle-fill"></i> Agregar Producto
+            </button>
         </div>
 
-        <div class="col-md-12 text-center mt-3">
-            <button class="btn btn-primary" name="btn_crear" value="crear"><i class="bi bi-floppy-fill"></i> Crear</button>
-            <button class="btn btn-success" name="btn_actualizar" value="actualizar"><i class="bi bi-pencil"></i> Actualizar</button>
-            <button class="btn btn-danger" name="btn_borrar" value="borrar"><i class="bi bi-trash3-fill"></i> Borrar</button>
+        <!-- Botones principales -->
+        <div class="col-md-12 text-center mt-4">
+            <button class="btn btn-primary me-2" name="btn_crear" value="crear">
+                <i class="bi bi-floppy-fill"></i> Crear
+            </button>
+            <button class="btn btn-warning text-dark me-2" name="btn_actualizar" value="actualizar">
+                <i class="bi bi-pencil-square"></i> Actualizar
+            </button>
+            <button class="btn btn-danger me-2" name="btn_borrar" value="borrar">
+                <i class="bi bi-trash3-fill"></i> Borrar
+            </button>
         </div>
     </form>
 
-   
-    <h3>Historial de Ventas</h3>
-    <table class="table table-dark table-striped" id="tabla_ventas">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>No. Factura</th>
-                <th>Serie</th>
-                <th>Cliente</th>
-                <th>Empleado</th>
-                <th>Fecha Factura</th>
-                <th>Fecha Ingreso</th>
-            </tr>
-        </thead>
-        <tbody>
-            <%
-                Ventas venta = new Ventas();
-                DefaultTableModel tabla = venta.leer();
-                for (int i = 0; i < tabla.getRowCount(); i++) {
-                    out.println("<tr>");
-                    for (int j = 0; j < tabla.getColumnCount(); j++) {
-                        out.println("<td>" + tabla.getValueAt(i, j) + "</td>");
+    <!-- Tabla de historial -->
+    <h3 class="mt-5 text-center text-light fw-bold"><i class="bi bi-clock-history"></i> Historial de Ventas</h3>
+    <div class="table-responsive mt-3">
+        <table class="table table-dark table-hover align-middle text-center" id="tabla_ventas">
+            <thead class="table-secondary text-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>No. Factura</th>
+                    <th>Serie</th>
+                    <th>Cliente</th>
+                    <th>Empleado</th>
+                    <th>Fecha Factura</th>
+                    <th>Fecha Ingreso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                    Ventas venta = new Ventas();
+                    DefaultTableModel tabla = venta.leer();
+                    for (int i = 0; i < tabla.getRowCount(); i++) {
+                        out.println("<tr>");
+                        for (int j = 0; j < tabla.getColumnCount(); j++) {
+                            out.println("<td>" + tabla.getValueAt(i, j) + "</td>");
+                        }
+                        out.println("</tr>");
                     }
-                    out.println("</tr>");
-                }
-            %>
-        </tbody>
-    </table>
+                %>
+            </tbody>
+        </table>
+    </div>
 </div>
 
-
+<!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-   
-    document.getElementById("btn_agregar").addEventListener("click", function() {
-        const tbody = document.querySelector("#detalle_table tbody");
-        const fila = document.createElement("tr");
-        fila.innerHTML = `
-            <td>
-                <select class="form-select" name="idproducto[]" required>
-                    <option disabled selected>Seleccione</option>
-                    <% 
-                        Producto p = new Producto();
-                        DefaultTableModel tablaProd = p.leerpr();
-                        for (int i = 0; i < tablaProd.getRowCount(); i++) {
-                            String id = tablaProd.getValueAt(i, 0).toString();
-                            String nombre = tablaProd.getValueAt(i, 1).toString();
-                            String imagen = tablaProd.getValueAt(i, 5).toString(); 
-                            out.println("<option value='" + id + "' data-img='" + imagen + "'>" + nombre + "</option>");
-                        }
-                    %>
-                </select>
-                <img src="" class="img-thumbnail mt-2" style="width: 70px; height: 70px; display: none;">
-            </td>
-            <td><input type="number" name="cantidad[]" class="form-control cantidad" min="1" value="1" required></td>
-            <td><input type="number" step="0.01" name="precio_unitario[]" class="form-control precio" required></td>
-            <td><input type="text" class="form-control subtotal" readonly></td>
-            <td><button type="button" class="btn btn-danger btn-sm btn_eliminar">Eliminar</button></td>
-        `;
-        tbody.appendChild(fila);
+document.getElementById("btn_agregar").addEventListener("click", function() {
+    const tbody = document.querySelector("#detalle_table tbody");
+    const fila = document.createElement("tr");
+    fila.innerHTML = `
+        <td>
+            <select class="form-select" name="idproducto[]" required>
+                <option disabled selected>Seleccione</option>
+                <% 
+                    Producto p = new Producto();
+                    DefaultTableModel tablaProd = p.leerpr();
+                    for (int i = 0; i < tablaProd.getRowCount(); i++) {
+                        String id = tablaProd.getValueAt(i, 0).toString();
+                        String nombre = tablaProd.getValueAt(i, 1).toString();
+                        String imagen = tablaProd.getValueAt(i, 5).toString(); 
+                        out.println("<option value='" + id + "' data-img='" + imagen + "'>" + nombre + "</option>");
+                    }
+                %>
+            </select>
+            <img src="" class="img-thumbnail mt-2" style="width: 70px; height: 70px; display: none;">
+        </td>
+        <td><input type="number" name="cantidad[]" class="form-control cantidad" min="1" value="1" required></td>
+        <td><input type="number" step="0.01" name="precio_unitario[]" class="form-control precio" required></td>
+        <td><input type="text" class="form-control subtotal" readonly></td>
+        <td><button type="button" class="btn btn-outline-danger btn-sm btn_eliminar"><i class="bi bi-x-circle"></i></button></td>
+    `;
+    tbody.appendChild(fila);
+});
+
+document.addEventListener("change", function(e) {
+  if (e.target && e.target.matches("select[name='idproducto[]']")) {
+    const select = e.target;
+    const selected = select.options[select.selectedIndex];
+    const imgSrc = selected.getAttribute("data-img");
+    const imgPreview = select.parentElement.querySelector("img");
+
+    if (imgSrc) {
+      imgPreview.src = imgSrc;
+      imgPreview.style.display = "block";
+    } else {
+      imgPreview.style.display = "none";
+    }
+  }
+});
+
+document.addEventListener("input", function(e) {
+    if (e.target.classList.contains("cantidad") || e.target.classList.contains("precio")) {
+        const fila = e.target.closest("tr");
+        const cantidad = parseFloat(fila.querySelector(".cantidad").value) || 0;
+        const precio = parseFloat(fila.querySelector(".precio").value) || 0;
+        fila.querySelector(".subtotal").value = (cantidad * precio).toFixed(2);
+    }
+});
+
+document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("btn_eliminar")) {
+        e.target.closest("tr").remove();
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const tabla = document.querySelector("#tabla_ventas");
+    tabla.addEventListener("click", function(e) {
+        const fila = e.target.closest("tr");
+        if (!fila) return;
+
+        tabla.querySelectorAll("tr").forEach(tr => tr.classList.remove("table-active"));
+        fila.classList.add("table-active");
+
+        const celdas = fila.querySelectorAll("td");
+        document.getElementById("txt_id").value = celdas[0].textContent.trim();
+        document.getElementById("txt_no_factura").value = celdas[1].textContent.trim();
+        document.getElementById("txt_serie").value = celdas[2].textContent.trim();
+        document.getElementById("drop_cliente").value = celdas[3].textContent.trim();
+        document.getElementById("drop_empleado").value = celdas[4].textContent.trim();
+        document.getElementById("txt_fecha_factura").value = celdas[5].textContent.trim();
+        document.getElementById("txt_fecha_ingreso").value = celdas[6].textContent.trim();
     });
-
-    
-    document.addEventListener("change", function(e) {
-      if (e.target && e.target.matches("select[name='idproducto[]']")) {
-        const select = e.target;
-        const selected = select.options[select.selectedIndex];
-        const imgSrc = selected.getAttribute("data-img");
-        const imgPreview = select.parentElement.querySelector("img");
-
-        if (imgSrc) {
-          imgPreview.src = imgSrc;
-          imgPreview.style.display = "block";
-        } else {
-          imgPreview.style.display = "none";
-        }
-      }
-    });
-
-    
-    document.addEventListener("input", function(e) {
-        if (e.target.classList.contains("cantidad") || e.target.classList.contains("precio")) {
-            const fila = e.target.closest("tr");
-            const cantidad = parseFloat(fila.querySelector(".cantidad").value) || 0;
-            const precio = parseFloat(fila.querySelector(".precio").value) || 0;
-            fila.querySelector(".subtotal").value = (cantidad * precio).toFixed(2);
-        }
-    });
-
-   
-    document.addEventListener("click", function(e) {
-        if (e.target.classList.contains("btn_eliminar")) {
-            e.target.closest("tr").remove();
-        }
-    });
-
-    
-    document.addEventListener("DOMContentLoaded", function() {
-        const tabla = document.querySelector("#tabla_ventas");
-        tabla.addEventListener("click", function(e) {
-            const fila = e.target.closest("tr");
-            if (!fila) return;
-
-            tabla.querySelectorAll("tr").forEach(tr => tr.classList.remove("selected"));
-            fila.classList.add("selected");
-
-            const celdas = fila.querySelectorAll("td");
-            document.getElementById("txt_id").value = celdas[0].textContent.trim();
-            document.getElementById("txt_no_factura").value = celdas[1].textContent.trim();
-            document.getElementById("txt_serie").value = celdas[2].textContent.trim();
-            document.getElementById("drop_cliente").value = celdas[3].textContent.trim();
-            document.getElementById("drop_empleado").value = celdas[4].textContent.trim();
-            document.getElementById("txt_fecha_factura").value = celdas[5].textContent.trim();
-            document.getElementById("txt_fecha_ingreso").value = celdas[6].textContent.trim();
-        });
-    });
+});
 </script>
 
 </body>

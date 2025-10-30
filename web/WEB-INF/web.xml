@@ -40,6 +40,10 @@
         <servlet-name>sr_logout</servlet-name>
         <servlet-class>controlador.sr_logout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReporteEmpleadosServlet</servlet-name>
+        <servlet-class>controlador.ReporteEmpleadosServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>sr_empleado</servlet-name>
         <url-pattern>/sr_empleado</url-pattern>
@@ -80,7 +84,15 @@
         <servlet-name>sr_logout</servlet-name>
         <url-pattern>/sr_logout</url-pattern>
     </servlet-mapping>
+    <servlet>
+    <servlet-name>reporteEmpleados</servlet-name>
+    <servlet-class>controlador.ReporteEmpleadosServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>reporteEmpleados</servlet-name>
+    <url-pattern>/reporteEmpleados</url-pattern>
+</servlet-mapping>
     <welcome-file-list>
-    <welcome-file>login.jsp</welcome-file>
-</welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

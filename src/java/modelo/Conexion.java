@@ -18,7 +18,7 @@ public class Conexion {
     private final String bd = "db_progra2";
     private final String urlConexion = String.format("jdbc:mysql://localhost:%s/%s?serverTimezone=UTC", puerto, bd);
     private final String usuario = "root";
-    private final String contra = "Jona232001";
+    private final String contra = "01346795";
     private final String jdbc = "com.mysql.cj.jdbc.Driver";
 
     // 🔹 CAMBIO AQUÍ: ahora devuelve la conexión
