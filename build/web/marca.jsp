@@ -141,6 +141,7 @@
                 <button class="btn btn-danger" id="btn_borrar" name="btn_borrar" value="borrar">
                     <i class="bi bi-trash3-fill"></i> Borrar
                 </button>
+                <a href="ReporteMarcasServlet" target="_blank" class="btn btn-warning"><i class="bi bi-file-earmark-pdf-fill"></i> PDF</a>
             </div>
         </form>
     </div>

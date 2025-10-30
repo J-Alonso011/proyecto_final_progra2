@@ -44,6 +44,22 @@
         <servlet-name>ReporteEmpleadosServlet</servlet-name>
         <servlet-class>controlador.ReporteEmpleadosServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReporteProductosServlet</servlet-name>
+        <servlet-class>controlador.ReporteProductosServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReporteClientesServlet</servlet-name>
+        <servlet-class>controlador.ReporteClientesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReporteProveedoresServlet</servlet-name>
+        <servlet-class>controlador.ReporteProveedoresServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReporteMarcasServlet</servlet-name>
+        <servlet-class>controlador.ReporteMarcasServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>sr_empleado</servlet-name>
         <url-pattern>/sr_empleado</url-pattern>
@@ -85,13 +101,29 @@
         <url-pattern>/sr_logout</url-pattern>
     </servlet-mapping>
     <servlet>
-    <servlet-name>reporteEmpleados</servlet-name>
-    <servlet-class>controlador.ReporteEmpleadosServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>reporteEmpleados</servlet-name>
-    <url-pattern>/reporteEmpleados</url-pattern>
-</servlet-mapping>
+        <servlet-name>reporteEmpleados</servlet-name>
+        <servlet-class>controlador.ReporteEmpleadosServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>reporteEmpleados</servlet-name>
+        <url-pattern>/reporteEmpleados</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReporteProductosServlet</servlet-name>
+        <url-pattern>/ReporteProductosServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReporteClientesServlet</servlet-name>
+        <url-pattern>/ReporteClientesServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReporteProveedoresServlet</servlet-name>
+        <url-pattern>/ReporteProveedoresServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReporteMarcasServlet</servlet-name>
+        <url-pattern>/ReporteMarcasServlet</url-pattern>
+    </servlet-mapping>
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>

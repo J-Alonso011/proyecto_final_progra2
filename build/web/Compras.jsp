@@ -90,7 +90,7 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark shadow">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><i class="bi bi-building"></i> UMG Compras</a>
+    <a class="navbar-brand" href="#"><i class="bi bi-building"></i> CEJ Compras</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
       <span class="navbar-toggler-icon"></span>
     </button>
