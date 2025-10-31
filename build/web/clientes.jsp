@@ -125,6 +125,7 @@
               <button type="button" class="btn btn-outline-secondary btn-sm ms-auto" id="btn_nuevo">
                 <i class="bi bi-arrow-clockwise"></i> Nuevo
               </button>
+              <a href="ReporteClientesServlet" target="_blank" class="btn btn-warning"><i class="bi bi-file-earmark-pdf-fill"></i> PDF</a>
             </div>
           </form>
         </div>

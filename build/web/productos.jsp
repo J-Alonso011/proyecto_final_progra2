@@ -178,6 +178,8 @@
                 <button class="btn btn-primary me-2" name="btn_crear" value="crear"><i class="bi bi-floppy-fill"></i> Crear</button>
                 <button class="btn btn-success me-2" name="btn_actualizar" value="actualizar"><i class="bi bi-pencil"></i> Actualizar</button>
                 <button class="btn btn-danger" name="btn_borrar" value="borrar"><i class="bi bi-trash3-fill"></i> Borrar</button>
+                <a href="ReporteProductosServlet" target="_blank" class="btn btn-warning"><i class="bi bi-file-earmark-pdf-fill"></i> PDF</a>
+
                 
                 <a href="marca.jsp" class="btn btn-sm btn-info text-white">
                     <i class="bi bi-tags-fill"></i> Marcas

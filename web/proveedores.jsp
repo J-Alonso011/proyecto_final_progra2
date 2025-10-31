@@ -22,7 +22,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand fw-bold text-warning" href="#">UMG</a>
+            <a class="navbar-brand fw-bold text-warning" href="#">CEJ</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -90,6 +90,7 @@
                 <button class="btn btn-danger fw-semibold" id="btn_borrar" name="btn_borrar" value="borrar">
                     <i class="bi bi-trash3-fill"></i> Borrar
                 </button>
+                <a href="ReporteProveedoresServlet" target="_blank" class="btn btn-warning"><i class="bi bi-file-earmark-pdf-fill"></i> PDF</a>
             </div>
         </form>
 
